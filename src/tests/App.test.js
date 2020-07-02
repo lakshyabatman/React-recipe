@@ -1,9 +1,14 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import {render} from 'react-dom'
 import App from '../components/App';
+let container = null;
 
+beforeEach(() => {
+  container = document.createElement("div");
+  document.body.appendChild(container);
+});
 test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+
+  render(<App />,container);
+  expect(container).toBeDefined()
 });
