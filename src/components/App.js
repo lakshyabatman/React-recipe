@@ -1,12 +1,10 @@
 import React from 'react';
-import '../assets/style/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import HomePage from './views/Home';
 function App() {
   return (
-    <div className="App">
-      Hello, world!
-    </div>
+
+    <HomePage/>
   );
 }
 
