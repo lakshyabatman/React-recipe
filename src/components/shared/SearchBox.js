@@ -1,10 +1,10 @@
 import React from 'react'
 
-const SearchBoxComponent = (searchFood) => {
+const SearchBoxComponent = (props) => {
 
   const SearchFood = (e) => {
     e.preventDefault();
-    searchFood("Test")
+    props.searchItem('idli')
   }
   return (
     <div>

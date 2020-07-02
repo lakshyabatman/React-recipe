@@ -18,10 +18,9 @@ export const GET_RECIPES = (payload) => {
 
 export function searchItem(keyword) {
   return (dispatch) => {
-    Promise.all(apiService.fetchDishes(keyword),apiService.fetchRecipes(keyword)).then(values=> {
-      console.log(values)
-      dispatch(GET_DISHES(values[0]))
-      dispatch(GET_RECIPES(values[1]))
+    Promise.all([apiService.fetchDishes(keyword),apiService.fetchRecipes(keyword)]).then(([respDishes,respRecipes]) => {
+    dispatch(GET_DISHES(respDishes.data['hints']))
+    dispatch(GET_RECIPES(respRecipes.data['hits']))
     }).catch((error) => {
       console.log(error);
       return;

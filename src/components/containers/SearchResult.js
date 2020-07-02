@@ -1,16 +1,4 @@
-import { connect } from 'react-redux'
-import SearchBoxComponent from '../shared/SearchBox'
-import actions from '../../+store/actions'
-const mapDispatchToProps = dispatch => ({
-  /**
-   * TODO: Wire it with action!
-   * 
-   *  
-   */  
-  searchItem: keyword => dispatch(actions.searchItem(keyword))
-})
+import React from 'react';
+import Slider from "react-slick";
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(SearchBoxComponent)
+
