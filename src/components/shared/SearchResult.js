@@ -23,10 +23,5 @@ const SearchResult = (props) => {
         </Container>
       )
     }
-    /**
-     * TODO: ADD CSS and wire with wrapper!
-     */
-
-  
 }
 export default SearchResult

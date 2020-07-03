@@ -7,3 +7,12 @@
   display: flex;
   justify-content: space-evenly;
 }
+
+@media (max-width:460px) {
+  .filter-wrapper > div {
+    flex-direction: column;
+  }
+  .filter-wrapper > div > button {
+    margin-top: 10px;
+  }
+}

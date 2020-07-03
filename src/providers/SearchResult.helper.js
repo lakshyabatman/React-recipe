@@ -16,8 +16,7 @@ const filterByCarb = (list) => {
       fat = el.recipe.totalDaily.FAT.quantity;
     }
     let carbContent = (fat+carb)/(protien+carb+fat);
-    console.log(carbContent)
-    return carbContent> 50;
+    return carbContent> .5;
     
   })
 }
@@ -37,7 +36,7 @@ const filterByProtien = (list) => {
       fat = el.recipe.totalDaily.FAT.quantity;
     }
     let protienContent = (protien)/(protien+carb+fat);
-    return protienContent> 15;    
+    return protienContent> .15;    
   })
 }
 const filterByBalance= (list) => {
@@ -55,8 +54,7 @@ const filterByBalance= (list) => {
       fat = el.recipe.totalDaily.FAT.quantity;
     }
     let protienContent = (protien)/(protien+carb+fat);
-    console.log(protienContent)
-    return protienContent>=12 && protienContent <=15;
+    return protienContent>=.12 && protienContent <=.15;
     
   })
 }

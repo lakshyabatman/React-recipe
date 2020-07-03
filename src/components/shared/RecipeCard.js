@@ -6,7 +6,7 @@ const RecipeCard = (props) => {
     <Card.Body>
       <Card.Title>{props.recipe.label.split(" ").slice(0, 20).join(" ")}</Card.Title>
       <Card.Text>
-          {props.recipe.healthLabels.map((el,index) => <Badge style={{marginRight:5}} key="index" pill variant="primary">{el}</Badge>  )}
+          {props.recipe.healthLabels.map((el,index) => <Badge style={{marginRight:5}} key={index} pill variant="primary">{el}</Badge>  )}
       </Card.Text>
     </Card.Body>
   </Card>
