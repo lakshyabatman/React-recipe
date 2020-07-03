@@ -3,3 +3,7 @@
   width: 100%;
   flex-direction: column;
 }
+.search-result-wrapper > div {
+  margin-bottom: 40px;
+  margin-top: 40px;
+}

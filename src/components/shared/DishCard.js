@@ -2,7 +2,7 @@ import React from 'react'
 import {Card, Badge} from 'react-bootstrap'
 const DishCard = (props) => {
   return (
-    <Card style={{ width: '20rem',height:'10rem', marginTop:100 }}>
+    <Card style={{ width: '20rem',height:'10rem' }}>
     <Card.Body>
       <Card.Title>{props.food.label}</Card.Title>
       <Card.Text>
