@@ -3,13 +3,20 @@ import {FILTER_TYPES} from '../+store/actions/actionTypes'
 
 const filterByCarb = (list) => {
   return list.filter(el => {
-    if(el.nutrients) {
-      var {carb, protien,fat} = el.nutrients;
+    let carb = 0;
+    let protien = 0;
+    let fat = 0;
+    if(el.food) {
+      carb = el.food.nutrients.CHOCDF;
+      protien = el.food.nutrients.PROCNT;
+      fat = el.food.nutrients.FAT;
     }else {
-      // eslint-disable-next-line no-redeclare
-      var {carb, protien,fat} = el.totalNutrients;
+      carb = el.recipe.totalDaily.CHOCDF.quantity;
+      protien = el.recipe.totalDaily.PROCNT.quantity;
+      fat = el.recipe.totalDaily.FAT.quantity;
     }
     let carbContent = (fat+carb)/(protien+carb+fat);
+    console.log(carbContent)
     return carbContent> 50;
     
   })
@@ -17,32 +24,42 @@ const filterByCarb = (list) => {
 
 const filterByProtien = (list) => {
   return list.filter(el => {
-    if(el.nutrients) {
-      var {carb, protien,fat} = el.nutrients;
+    let carb = 0;
+    let protien = 0;
+    let fat = 0;
+    if(el.food) {
+      carb = el.food.nutrients.CHOCDF;
+      protien = el.food.nutrients.PROCNT;
+      fat = el.food.nutrients.FAT;
     }else {
-      // eslint-disable-next-line no-redeclare
-      var {carb, protien,fat} = el.totalNutrients;
+      carb = el.recipe.totalDaily.CHOCDF.quantity;
+      protien = el.recipe.totalDaily.PROCNT.quantity;
+      fat = el.recipe.totalDaily.FAT.quantity;
     }
     let protienContent = (protien)/(protien+carb+fat);
-    return protienContent> 15;
-    
+    return protienContent> 15;    
   })
 }
-
 const filterByBalance= (list) => {
   return list.filter(el => {
-    if(el.nutrients) {
-      var {carb, protien,fat} = el.nutrients;
+    let carb = 0;
+    let protien = 0;
+    let fat = 0;
+    if(el.food) {
+      carb = el.food.nutrients.CHOCDF;
+      protien = el.food.nutrients.PROCNT;
+      fat = el.food.nutrients.FAT;
     }else {
-      // eslint-disable-next-line no-redeclare
-      var {carb, protien,fat} = el.totalNutrients;
+      carb = el.recipe.totalDaily.CHOCDF.quantity;
+      protien = el.recipe.totalDaily.PROCNT.quantity;
+      fat = el.recipe.totalDaily.FAT.quantity;
     }
     let protienContent = (protien)/(protien+carb+fat);
+    console.log(protienContent)
     return protienContent>=12 && protienContent <=15;
     
   })
 }
-
 
 export const filterItems = (state, filter) => {
   switch (filter) {

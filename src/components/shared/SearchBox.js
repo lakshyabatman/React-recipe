@@ -13,7 +13,7 @@ const SearchBoxComponent = (props) => {
     setInput("")
   }
   return (
-    <Jumbotron fluid>
+    <Jumbotron style={{margin:0}} fluid>
       <Container>
         <form onSubmit={ (e) => SearchFood(e) }>
           <InputGroup className="mb-3">

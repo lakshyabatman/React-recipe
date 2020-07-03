@@ -1,3 +1,4 @@
 export const InitialState = {
-  isLoading:true
+  isLoading:true,
+  filter_type:''
 }

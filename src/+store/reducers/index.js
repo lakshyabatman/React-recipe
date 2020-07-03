@@ -17,8 +17,13 @@ const rootReducer =  (state =InitialState, actions) => {
         ...state,
         isLoading: !state.isLoading
       }
+    case 'ADD_FILTER':
+      return {
+        ...state,
+        filter_type: actions.payload
+      }
     default:
-      return state
+      return state;
   }
 }
 

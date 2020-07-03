@@ -22,7 +22,7 @@ const SearchSlider = (props) => {
     }else {
       return (
         <Slider {...settings}>
-          {props.payload.map((el,index) => <RecipeCard food={el.food} key="index"/>)}
+          {props.payload.map((el,index) => <RecipeCard recipe={el.recipe} key="index"/>)}
         </Slider>
       );
     }

@@ -15,6 +15,12 @@ export const GET_RECIPES = (payload) => {
   }
 }
 
+export const FILTER = (payload) => {
+  return {
+    type:'ADD_FILTER',
+    payload
+  }
+}
 
 export function searchItem(keyword) {
   return (dispatch) => {
